@@ -48,6 +48,24 @@ if (rgFill) {
   gaugeObserver.observe(rgFill);
 }
 
+// Staggered joint-label entrance in the body map diagram
+const bodyDiagram = document.querySelector('.body-diagram');
+if (bodyDiagram) {
+  const joints = bodyDiagram.querySelectorAll('.joint');
+  const bodyObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        joints.forEach((joint) => {
+          const delay = parseInt(joint.dataset.stagger || '0', 10) * 120;
+          setTimeout(() => joint.classList.add('in-view'), delay);
+        });
+        bodyObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+  bodyObserver.observe(bodyDiagram);
+}
+
 // FAQ accordion
 document.querySelectorAll('.faq-item').forEach((item) => {
   const btn = item.querySelector('.faq-q');

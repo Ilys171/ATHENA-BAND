@@ -172,15 +172,32 @@
       <div class="split-grid reveal">
         <div class="bodymap-card">
           <div class="bodymap-grid">
-            <svg class="body-figure" viewBox="0 0 200 320">
-              <circle cx="100" cy="30" r="18" class="body-line"/>
-              <path d="M100 48 v70 M100 70 L70 110 M100 70 L130 110 M100 118 L75 220 M100 118 L125 220" class="body-line"/>
-            </svg>
-            <span class="joint jt-shoulder">Shoulder</span>
-            <span class="joint jt-elbow">Elbow</span>
-            <span class="joint jt-back warn">Back</span>
-            <span class="joint jt-knee warn">Knee</span>
-            <span class="joint jt-ankle">Ankle</span>
+            <div class="body-diagram">
+              <svg class="body-svg" viewBox="0 0 200 500">
+                <circle cx="100" cy="40" r="25" fill="#141A24" stroke="#00E0C7" stroke-width="2" opacity="0.4"/>
+                <path d="M100 65 L100 200" stroke="#00E0C7" stroke-width="3" opacity="0.4" fill="none"/>
+                <ellipse cx="100" cy="130" rx="40" ry="80" fill="none" stroke="#00E0C7" stroke-width="2" opacity="0.3"/>
+                <path d="M100 80 L60 100 L40 180" stroke="#00E0C7" stroke-width="2.5" fill="none" opacity="0.4"/>
+                <path d="M100 80 L140 100 L160 180" stroke="#00E0C7" stroke-width="2.5" fill="none" opacity="0.4"/>
+                <path d="M100 200 L80 350 L75 470" stroke="#00E0C7" stroke-width="2.5" fill="none" opacity="0.4"/>
+                <path d="M100 200 L120 350 L125 470" stroke="#00E0C7" stroke-width="2.5" fill="none" opacity="0.4"/>
+
+                <circle cx="100" cy="80" r="12" fill="#34D399" opacity="0.3"/>
+                <circle cx="100" cy="80" r="8" fill="#34D399" opacity="0.5"/>
+                <circle cx="52" cy="130" r="10" fill="#34D399" opacity="0.3"/>
+                <circle cx="100" cy="150" r="20" fill="#FFB020" opacity="0.2"/>
+                <circle cx="100" cy="150" r="12" fill="#FFB020" opacity="0.4"/>
+                <circle class="knee-pulse-outer" cx="96" cy="350" r="18" fill="#FFB020" opacity="0.2"/>
+                <circle class="knee-pulse-inner" cx="96" cy="350" r="12" fill="#FFB020" opacity="0.5"/>
+                <circle cx="122" cy="460" r="8" fill="#34D399" opacity="0.3"/>
+              </svg>
+
+              <span class="joint" style="left:50%;top:25%;" data-stagger="0"><i class="jdot" style="background:#34D399;box-shadow:0 0 6px #34D399;"></i>Shoulder</span>
+              <span class="joint" style="left:35%;top:35%;" data-stagger="1"><i class="jdot" style="background:#34D399;box-shadow:0 0 6px #34D399;"></i>Elbow</span>
+              <span class="joint" style="left:50%;top:40%;" data-stagger="2"><i class="jdot" style="background:#FFB020;box-shadow:0 0 6px #FFB020;"></i>Back</span>
+              <span class="joint" style="left:48%;top:70%;" data-stagger="3"><i class="jdot" style="background:#FFB020;box-shadow:0 0 6px #FFB020;"></i>Knee</span>
+              <span class="joint" style="left:52%;top:85%;" data-stagger="4"><i class="jdot" style="background:#34D399;box-shadow:0 0 6px #34D399;"></i>Ankle</span>
+            </div>
           </div>
         </div>
 

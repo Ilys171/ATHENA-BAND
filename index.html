@@ -3,30 +3,27 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATHENA BAND — Predict Your Body's Future</title>
-<meta name="description" content="ATHENA BAND is the world's first predictive health and performance system: a screenless wearable and AI platform that forecasts injury, illness, and recovery before they happen." />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%230b1c22%22/><circle cx=%2250%22 cy=%2250%22 r=%2222%22 fill=%22none%22 stroke=%22%232fd9c5%22 stroke-width=%228%22/></svg>" />
+<title>ATHENA — Predict Your Body's Future</title>
+<meta name="description" content="ATHENA BAND is a screenless AI wearable that analyzes recovery, stress, sleep, activity, and injury risk to help you train smarter before problems appear." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230A0E16%22/><circle cx=%2250%22 cy=%2250%22 r=%2224%22 fill=%22none%22 stroke=%22%2300E0C7%22 stroke-width=%228%22/></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-<div class="noise-overlay" aria-hidden="true"></div>
-
 <header class="site-header" id="top">
   <div class="container header-inner">
-    <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true"></span>
-      ATHENA<span class="brand-thin">BAND</span>
-    </a>
+    <a class="brand" href="#top">ATHENA</a>
     <nav class="main-nav" aria-label="Primary">
-      <a href="#device">Device</a>
-      <a href="#features">AI Features</a>
-      <a href="#compare">Why ATHENA</a>
-      <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+      <a href="#technology">Technology</a>
+      <a href="#features">Features</a>
+      <a href="#band">Band</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
     </nav>
+    <a href="#waitlist" class="btn btn-primary btn-sm nav-cta">Join Waitlist</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -38,182 +35,629 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-glow" aria-hidden="true"></div>
-    <div class="container hero-inner">
-      <p class="eyebrow">Predictive Health &amp; Performance System</p>
-      <h1 class="hero-title">Don't Track Your Body.<br><span class="text-gradient">Predict Its Future.</span></h1>
-      <p class="hero-sub">
-        ATHENA BAND pairs a screenless wearable with an AI platform that reads your body's signals
-        around the clock — then forecasts injury, illness, and recovery before they happen.
-      </p>
-      <div class="hero-actions">
-        <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
-        <a href="#device" class="btn btn-ghost">See How It Works</a>
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <h1 class="hero-title">Don't Track Your Body.<br><span class="text-gradient">Predict Its Future.</span></h1>
+        <p class="hero-sub">ATHENA BAND is a screenless AI wearable that analyzes recovery, stress, sleep, activity, and injury risk to help you train smarter before problems appear.</p>
+        <div class="hero-actions">
+          <a href="#waitlist" class="btn btn-primary">Join Waitlist</a>
+          <a href="#technology" class="btn btn-ghost">See How It Works</a>
+        </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="band-graphic">
-          <div class="band-core">
-            <svg class="pulse-line" viewBox="0 0 300 80" preserveAspectRatio="none">
-              <polyline points="0,40 60,40 80,10 100,70 120,40 180,40 200,15 220,65 240,40 300,40" />
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="gauge-wrap">
+          <svg class="gauge-ring" viewBox="0 0 240 240">
+            <circle class="gauge-ring-track" cx="120" cy="120" r="108"/>
+            <circle class="gauge-ring-fill" cx="120" cy="120" r="108"/>
+          </svg>
+          <div class="gauge-core"></div>
+          <span class="orbit-dot od-1"></span>
+          <span class="orbit-dot od-2"></span>
+          <span class="orbit-dot od-3"></span>
+          <span class="orbit-dot od-4"></span>
+          <span class="orbit-dot od-5"></span>
+          <span class="orbit-dot od-6"></span>
+        </div>
+        <div class="float-card fc-hrv">
+          <span class="fc-label">HRV</span>
+          <span class="fc-value mono">68 <small>ms</small></span>
+        </div>
+        <div class="float-card fc-recovery">
+          <span class="fc-label">Recovery</span>
+          <span class="fc-value mono accent-green">82%</span>
+        </div>
+        <div class="float-card fc-risk">
+          <span class="fc-dot"></span>
+          <span class="fc-label">Risk Forecast</span>
+          <span class="fc-value">Low</span>
+        </div>
+        <svg class="ecg-line" viewBox="0 0 220 60" preserveAspectRatio="none">
+          <polyline points="0,30 40,30 55,8 70,52 85,30 130,30 145,12 160,48 175,30 220,30" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="stat-bar reveal">
+      <div class="container stat-bar-grid">
+        <div class="stat-pill"><svg class="icon" viewBox="0 0 24 24"><polyline points="2,14 8,14 11,4 15,20 18,10 22,10"/></svg><span>24/7 Body Monitoring</span></div>
+        <div class="stat-pill"><svg class="icon" viewBox="0 0 24 24"><polyline points="2,17 9,10 13,14 22,4"/><polyline points="15,4 22,4 22,11"/></svg><span>7-Day Risk Forecast</span></div>
+        <div class="stat-pill"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.3 8.2 2 4.5 5.6 4c2-.3 3.7.7 4.9 2.4C11.7 4.7 13.4 3.7 15.4 4c3.6.5 5.3 4.2 3.6 7.7C21.5 16.4 12 21 12 21z"/></svg><span>AI Recovery Score</span></div>
+        <div class="stat-pill"><svg class="icon" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="3"/><line x1="12" y1="9" x2="12" y2="9.01"/></svg><span>Screenless Band</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY / COMPARE -->
+  <section class="section" id="technology">
+    <div class="container">
+      <h2 class="section-title center reveal">Tracking shows the past.<br><span class="text-gradient">ATHENA predicts what comes next.</span></h2>
+
+      <div class="compare-grid reveal">
+        <div class="compare-panel">
+          <div class="panel-head"><span class="panel-icon icon-muted"><svg viewBox="0 0 24 24"><line x1="6" y1="20" x2="6" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="18" y1="20" x2="18" y2="14"/></svg></span><h3>Traditional Trackers</h3></div>
+          <p>Show what already happened.</p>
+          <svg class="trend-graph" viewBox="0 0 320 120" preserveAspectRatio="none">
+            <line x1="230" y1="0" x2="230" y2="120" class="dash-line"/>
+            <polyline points="0,70 60,80 120,55 180,65 230,60" class="line-muted"/>
+          </svg>
+          <div class="graph-labels"><span>Past</span><span>Now</span></div>
+        </div>
+
+        <div class="compare-panel compare-panel-highlight">
+          <span class="risk-tag">Risk Zone</span>
+          <div class="panel-head"><span class="panel-icon icon-teal"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></span><h3>ATHENA AI</h3></div>
+          <p>Predicts what may happen next.</p>
+          <svg class="trend-graph" viewBox="0 0 320 120" preserveAspectRatio="none">
+            <line x1="230" y1="0" x2="230" y2="120" class="dash-line teal"/>
+            <polyline points="0,70 60,80 120,55 180,65 230,55" class="line-teal"/>
+            <polyline points="230,55 270,35 320,20" class="line-purple-dash"/>
+          </svg>
+          <div class="graph-labels"><span>Past</span><span class="accent-teal">Now</span><span class="accent-purple">Future</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAND / HARDWARE -->
+  <section class="section section-alt" id="band">
+    <div class="container">
+      <h2 class="section-title center reveal">Minimal hardware.<br><span class="text-gradient">Maximum intelligence.</span></h2>
+
+      <div class="band-grid reveal">
+        <div class="band-orbit">
+          <span class="orbit-ring-static"></span>
+          <span class="orbit-node on-1"></span>
+          <span class="orbit-node on-2"></span>
+          <span class="orbit-node on-3"></span>
+          <span class="orbit-node on-4"></span>
+          <span class="orbit-node on-5"></span>
+          <span class="orbit-node on-6"></span>
+          <span class="orbit-node on-7"></span>
+          <span class="orbit-node on-8"></span>
+          <div class="band-center"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.3 8.2 2 4.5 5.6 4c2-.3 3.7.7 4.9 2.4C11.7 4.7 13.4 3.7 15.4 4c3.6.5 5.3 4.2 3.6 7.7C21.5 16.4 12 21 12 21z"/></svg></div>
+        </div>
+
+        <div class="band-copy">
+          <p class="lede">No screen. No distractions.<br>Just continuous body data.</p>
+          <div class="metric-grid">
+            <div class="metric-card"><svg class="icon accent-teal" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.3 8.2 2 4.5 5.6 4c2-.3 3.7.7 4.9 2.4C11.7 4.7 13.4 3.7 15.4 4c3.6.5 5.3 4.2 3.6 7.7C21.5 16.4 12 21 12 21z"/></svg><span>Heart Rate</span></div>
+            <div class="metric-card"><svg class="icon accent-teal" viewBox="0 0 24 24"><polyline points="1,12 8,12 10,5 14,19 16,12 23,12"/></svg><span>HRV</span></div>
+            <div class="metric-card"><svg class="icon accent-teal" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><span>Sleep</span></div>
+            <div class="metric-card"><svg class="icon accent-teal" viewBox="0 0 24 24"><path d="M10 13.5V4a2 2 0 1 1 4 0v9.5a4 4 0 1 1-4 0z"/></svg><span>Skin Temp</span></div>
+            <div class="metric-card"><svg class="icon accent-teal" viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 0-4 4c0 1 .3 1.7.8 2.3C7.7 10.2 7 11.5 7 13a5 5 0 0 0 5 5 5 5 0 0 0 5-5c0-1.5-.7-2.8-1.8-3.7.5-.6.8-1.3.8-2.3a4 4 0 0 0-4-4z"/></svg><span>Stress</span></div>
+            <div class="metric-card"><svg class="icon accent-teal" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg><span>Recovery</span></div>
+          </div>
+          <div class="wide-card">
+            <span class="panel-icon icon-teal"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>
+            <div>
+              <h4>7-Day Battery Life</h4>
+              <p>Continuous monitoring without daily charging interruptions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES WRAP -->
+  <section id="features">
+
+  <!-- INJURY PREVENTION -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title center reveal">Predict injury risk<br><span class="text-gradient text-gradient-warn">before it interrupts your performance.</span></h2>
+      <p class="section-lead center reveal">ATHENA analyzes load, recovery, movement, sleep, HRV, and stress to identify elevated risk patterns across the knee, ankle, shoulder, elbow, back, and muscles.</p>
+
+      <div class="split-grid reveal">
+        <div class="bodymap-card">
+          <div class="bodymap-grid">
+            <svg class="body-figure" viewBox="0 0 200 320">
+              <circle cx="100" cy="30" r="18" class="body-line"/>
+              <path d="M100 48 v70 M100 70 L70 110 M100 70 L130 110 M100 118 L75 220 M100 118 L125 220" class="body-line"/>
+            </svg>
+            <span class="joint jt-shoulder">Shoulder</span>
+            <span class="joint jt-elbow">Elbow</span>
+            <span class="joint jt-back warn">Back</span>
+            <span class="joint jt-knee warn">Knee</span>
+            <span class="joint jt-ankle">Ankle</span>
+          </div>
+        </div>
+
+        <div class="alert-card">
+          <div class="panel-head"><span class="panel-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span><h3>Risk Alert</h3></div>
+          <span class="tag tag-amber">Right Knee: Elevated</span>
+          <div class="alert-body">
+            <p>Weekly load increased by <b class="accent-amber">35%</b>, while recovery dropped by <b class="accent-amber">20%</b>.</p>
+            <p>Right knee strain risk is elevated. Consider reducing high-impact activities for 48–72 hours.</p>
+          </div>
+          <div class="stat-row"><span>Training Load</span><span class="accent-amber mono">+35%</span></div>
+          <div class="stat-row"><span>Recovery Score</span><span class="accent-amber mono">-20%</span></div>
+          <div class="stat-row"><span>Risk Level</span><span class="accent-amber">High</span></div>
+          <a href="#waitlist" class="btn btn-gradient-warn full">View Prevention Plan <svg class="icon icon-inline" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOVERY INTELLIGENCE -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title center reveal">Wake up with your<br><span class="text-gradient">body's readiness score.</span></h2>
+
+      <div class="split-grid reveal">
+        <div class="readiness-card">
+          <span class="eyebrow-sm">Today's Status</span>
+          <h3>Daily Readiness</h3>
+          <div class="readiness-gauge">
+            <svg viewBox="0 0 200 200">
+              <circle class="rg-track" cx="100" cy="100" r="86"/>
+              <circle class="rg-fill" cx="100" cy="100" r="86" data-value="82"/>
+            </svg>
+            <div class="rg-center"><span class="rg-number mono">82</span><span class="rg-label">Readiness Score</span></div>
+          </div>
+          <div class="metric-grid metric-grid-2">
+            <div class="metric-card metric-card-stat"><span class="mc-label"><svg class="icon icon-sm accent-purple" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>Sleep</span><span class="mc-value accent-purple mono">91%</span></div>
+            <div class="metric-card metric-card-stat"><span class="mc-label"><svg class="icon icon-sm accent-teal" viewBox="0 0 24 24"><polyline points="1,12 8,12 10,5 14,19 16,12 23,12"/></svg>Recovery</span><span class="mc-value accent-teal mono">78%</span></div>
+            <div class="metric-card metric-card-stat"><span class="mc-label"><svg class="icon icon-sm accent-green" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.3 8.2 2 4.5 5.6 4c2-.3 3.7.7 4.9 2.4C11.7 4.7 13.4 3.7 15.4 4c3.6.5 5.3 4.2 3.6 7.7C21.5 16.4 12 21 12 21z"/></svg>HRV</span><span class="mc-value accent-green mono">85%</span></div>
+            <div class="metric-card metric-card-stat"><span class="mc-label"><svg class="icon icon-sm accent-amber" viewBox="0 0 24 24"><polyline points="2,17 9,10 13,14 22,4"/></svg>Fatigue</span><span class="mc-value accent-amber">Moderate</span></div>
+          </div>
+          <div class="wide-card wide-card-teal">
+            <span>Training Readiness</span>
+            <span class="accent-teal">High <svg class="icon icon-inline" viewBox="0 0 24 24"><polyline points="2,17 9,10 13,14 22,4"/><polyline points="15,4 22,4 22,11"/></svg></span>
+          </div>
+        </div>
+
+        <div class="insight-stack">
+          <div class="insight-card"><span class="panel-icon icon-green"><svg viewBox="0 0 24 24"><polyline points="2,17 9,10 13,14 22,4"/><polyline points="15,4 22,4 22,11"/></svg></span><div><h4>Optimal Training Window</h4><p>Your body is primed for high-intensity training. Recovery markers are strong across all systems.</p></div></div>
+          <div class="insight-card"><span class="panel-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span><div><h4>Sleep Quality Excellent</h4><p>You achieved 7h 42m of sleep with 91% quality. Deep sleep phases were 23% above your baseline.</p></div></div>
+          <div class="insight-card"><span class="panel-icon icon-teal"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.3 8.2 2 4.5 5.6 4c2-.3 3.7.7 4.9 2.4C11.7 4.7 13.4 3.7 15.4 4c3.6.5 5.3 4.2 3.6 7.7C21.5 16.4 12 21 12 21z"/></svg></span><div><h4>HRV Trending Up</h4><p>Your heart rate variability increased by 12% overnight, indicating strong parasympathetic recovery.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HYDRATION -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title center reveal">Hydration alerts<br><span class="text-gradient">before symptoms appear.</span></h2>
+      <p class="section-lead center reveal">ATHENA monitors skin temperature, heart rate, and activity patterns to predict dehydration risk before you feel thirsty.</p>
+
+      <div class="split-grid reveal">
+        <div class="bullet-stack">
+          <div class="bullet-item"><span class="panel-icon icon-teal"><svg viewBox="0 0 24 24"><path d="M12 2s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12z"/></svg></span><div><h4>Real-time monitoring</h4><p>Continuous hydration status tracking</p></div></div>
+          <div class="bullet-item"><span class="panel-icon icon-purple"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span><div><h4>Predictive alerts</h4><p>Get notified before dehydration impacts performance</p></div></div>
+        </div>
+
+        <div class="alert-card alert-card-teal">
+          <span class="panel-icon icon-teal lg"><svg viewBox="0 0 24 24"><path d="M12 2s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12z"/></svg></span>
+          <span class="tag tag-amber dot-tag"><span class="fc-dot"></span>Hydration Alert</span>
+          <h3>Hydration Risk: Medium</h3>
+          <p class="mini-label">Recommended Action</p>
+          <p class="callout">Drink <b class="accent-teal">450 ml</b> over the next <b class="accent-teal">60 minutes</b>.</p>
+          <div class="metric-grid metric-grid-2">
+            <div class="metric-card metric-card-stat"><span class="mc-label">Skin Temperature</span><span class="mc-value mono">+0.8°C</span></div>
+            <div class="metric-card metric-card-stat"><span class="mc-label">Heart Rate</span><span class="mc-value mono">+12 bpm</span></div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-head"><span>Current Level</span><span class="accent-amber mono">68%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:68%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUTRITION -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="split-grid reverse reveal">
+        <div class="step-stack">
+          <div class="step-card">
+            <span class="step-num">Step 1</span>
+            <h4><svg class="icon icon-inline accent-teal" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7 10 4h4l2 3"/><circle cx="12" cy="13.5" r="3.5"/></svg>Capture Your Meal</h4>
+            <div class="camera-box"><svg class="icon icon-lg" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7 10 4h4l2 3"/><circle cx="12" cy="13.5" r="3.5"/></svg></div>
+          </div>
+          <div class="step-arrow">↓</div>
+          <div class="step-card">
+            <span class="step-num">Step 2</span>
+            <h4><svg class="icon icon-inline accent-purple" viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>AI Analysis</h4>
+            <div class="analyzing-bar"><div class="analyzing-fill"></div></div>
+            <p class="analyzing-caption">Identifying food items and calculating nutrition…</p>
+          </div>
+          <div class="step-arrow">↓</div>
+          <div class="step-card step-card-highlight">
+            <span class="step-num">Step 3</span>
+            <h4><svg class="icon icon-inline accent-teal" viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>Macro Breakdown</h4>
+            <div class="metric-grid metric-grid-2">
+              <div class="metric-card metric-card-stat"><span class="mc-label">Calories</span><span class="mc-value mono">520</span></div>
+              <div class="metric-card metric-card-stat"><span class="mc-label">Protein</span><span class="mc-value accent-teal mono">42g</span></div>
+              <div class="metric-card metric-card-stat"><span class="mc-label">Carbs</span><span class="mc-value accent-purple mono">38g</span></div>
+              <div class="metric-card metric-card-stat"><span class="mc-label">Fat</span><span class="mc-value accent-amber mono">18g</span></div>
+            </div>
+            <span class="tag tag-green full-tag">✓ Nutrition Quality: Excellent</span>
+          </div>
+        </div>
+
+        <div class="feature-copy-block">
+          <h2 class="section-title reveal">Take a photo.<br><span class="text-gradient">Get nutrition insight.</span></h2>
+          <p class="section-lead reveal">Instantly analyze your meals with AI-powered nutrition recognition. Track macros, calories, and nutrition quality to optimize your performance and recovery.</p>
+          <div class="bullet-stack">
+            <div class="bullet-item bullet-item-sm"><span class="dot dot-teal"></span><div><h4>Instant Recognition</h4><p>AI identifies food items and calculates nutrition in seconds.</p></div></div>
+            <div class="bullet-item bullet-item-sm"><span class="dot dot-purple"></span><div><h4>Personalized Insights</h4><p>Recommendations tailored to your training goals and recovery needs.</p></div></div>
+            <div class="bullet-item bullet-item-sm"><span class="dot dot-teal"></span><div><h4>Track Over Time</h4><p>Build a complete nutrition history to optimize your performance.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL TWIN -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title center reveal">Your body,<br><span class="text-gradient">simulated forward.</span></h2>
+      <p class="section-lead center reveal">ATHENA builds a personal digital model of your body to forecast recovery, training response, and risk patterns.</p>
+
+      <div class="split-grid reveal">
+        <div class="twin-card">
+          <div class="twin-grid">
+            <span class="twin-tag">AI Digital Twin</span>
+            <svg class="twin-figure" viewBox="0 0 200 320">
+              <circle cx="100" cy="45" r="26" class="twin-line"/>
+              <path d="M100 71 v55 M100 90 L60 130 M100 90 L140 130 M100 126 L70 240 M100 126 L130 240" class="twin-line"/>
+              <circle cx="100" cy="98" r="4" class="twin-dot"/>
             </svg>
           </div>
         </div>
-        <div class="orbit-ring ring-1"></div>
-        <div class="orbit-ring ring-2"></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- DEVICE -->
-  <section class="section" id="device">
-    <div class="container">
-      <p class="section-eyebrow">The Device</p>
-      <h2 class="section-title">One band. Zero distractions.</h2>
-      <p class="section-lead">
-        No screen, no notifications, no clutter — styled like Whoop. ATHENA BAND has a single job:
-        capture your body's data as precisely as possible, 24 hours a day. It charges without ever
-        leaving your wrist, and every reading streams straight into the ATHENA AI app.
-      </p>
-
-      <div class="metric-grid">
-        <div class="metric-card"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.3 8.2 2 4.5 5.6 4c2-.3 3.7.7 4.9 2.4C11.7 4.7 13.4 3.7 15.4 4c3.6.5 5.3 4.2 3.6 7.7C21.5 16.4 12 21 12 21z"/></svg><span>Heart Rate</span></div>
-        <div class="metric-card"><svg class="icon" viewBox="0 0 24 24"><polyline points="1,12 8,12 10,5 14,19 16,12 23,12"/></svg><span>HRV</span></div>
-        <div class="metric-card"><svg class="icon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><span>Sleep Quality</span></div>
-        <div class="metric-card"><svg class="icon" viewBox="0 0 24 24"><path d="M10 13.5V4a2 2 0 1 1 4 0v9.5a4 4 0 1 1-4 0z"/><line x1="12" y1="8" x2="12" y2="14"/></svg><span>Skin Temperature</span></div>
-        <div class="metric-card"><svg class="icon" viewBox="0 0 24 24"><polygon points="13,2 3,14 11,14 9,22 21,10 13,10"/></svg><span>Stress Level</span></div>
-        <div class="metric-card"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 8v6l4 4M12 14l-4 4M9 11l3-2 3 2"/></svg><span>Physical Activity</span></div>
-        <div class="metric-card"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="8" width="17" height="8" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/><rect x="6" y="10.5" width="4" height="3" fill="currentColor" stroke="none"/></svg><span>Body Load</span></div>
-        <div class="metric-card"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><polyline points="18,3 18,7 14,7"/><polyline points="6,21 6,17 10,17"/></svg><span>Recovery</span></div>
-        <div class="metric-card"><svg class="icon" viewBox="0 0 24 24"><path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20"/></svg><span>Movement</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI FEATURES -->
-  <section class="section section-alt" id="features">
-    <div class="container">
-      <p class="section-eyebrow">ATHENA AI</p>
-      <h2 class="section-title">Seven ways ATHENA looks ahead.</h2>
-      <p class="section-lead">
-        Every signal the band collects feeds a single AI system that doesn't just report what's
-        happening in your body — it forecasts what's about to.
-      </p>
-
-      <div class="feature-list">
-
-        <article class="feature-row">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-          <div class="feature-copy">
-            <h3>AI Injury Prevention</h3>
-            <p>ATHENA analyzes millions of parameters to flag elevated injury risk across the knee, ankle, shoulder, elbow, back, and major muscle groups — before pain shows up.</p>
-            <blockquote>"Over the last 7 days, load increased by 35% while recovery dropped by 20%. Risk of right knee injury is elevated."</blockquote>
+        <div>
+          <p class="mini-label">Simulate how your body responds to different scenarios:</p>
+          <div class="scenario-list">
+            <div class="scenario-row"><span class="panel-icon icon-teal"><svg viewBox="0 0 24 24"><polyline points="1,12 8,12 10,5 14,19 16,12 23,12"/></svg></span><div><h4>Training Impact</h4><p>Forecast how your body adapts</p></div><svg class="chevron icon" viewBox="0 0 24 24"><polyline points="9,6 15,12 9,18"/></svg></div>
+            <div class="scenario-row"><span class="panel-icon icon-green"><svg viewBox="0 0 24 24"><polyline points="2,17 9,10 13,14 22,4"/><polyline points="15,4 22,4 22,11"/></svg></span><div><h4>Recovery Speed</h4><p>Forecast how your body adapts</p></div><svg class="chevron icon" viewBox="0 0 24 24"><polyline points="9,6 15,12 9,18"/></svg></div>
+            <div class="scenario-row"><span class="panel-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 0-4 4c0 1 .3 1.7.8 2.3C7.7 10.2 7 11.5 7 13a5 5 0 0 0 5 5 5 5 0 0 0 5-5c0-1.5-.7-2.8-1.8-3.7.5-.6.8-1.3.8-2.3a4 4 0 0 0-4-4z"/></svg></span><div><h4>Injury Risk</h4><p>Forecast how your body adapts</p></div><svg class="chevron icon" viewBox="0 0 24 24"><polyline points="9,6 15,12 9,18"/></svg></div>
+            <div class="scenario-row"><span class="panel-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span><div><h4>Sleep Effect</h4><p>Forecast how your body adapts</p></div><svg class="chevron icon" viewBox="0 0 24 24"><polyline points="9,6 15,12 9,18"/></svg></div>
+            <div class="scenario-row"><span class="panel-icon icon-teal"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span><div><h4>Nutrition Effect</h4><p>Forecast how your body adapts</p></div><svg class="chevron icon" viewBox="0 0 24 24"><polyline points="9,6 15,12 9,18"/></svg></div>
           </div>
-        </article>
-
-        <article class="feature-row">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><polyline points="18,3 18,7 14,7"/><polyline points="6,21 6,17 10,17"/></svg></div>
-          <div class="feature-copy">
-            <h3>Recovery Intelligence</h3>
-            <p>A morning report, every morning: sleep quality, recovery level, body energy, fatigue, and your readiness to train — distilled into one clear picture.</p>
+          <div class="wide-card wide-card-mixed">
+            <span class="panel-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 0-4 4c0 1 .3 1.7.8 2.3C7.7 10.2 7 11.5 7 13a5 5 0 0 0 5 5 5 5 0 0 0 5-5c0-1.5-.7-2.8-1.8-3.7.5-.6.8-1.3.8-2.3a4 4 0 0 0-4-4z"/></svg></span>
+            <div><h4>Continuous Learning</h4><p>Your digital twin becomes more accurate as ATHENA learns your unique patterns and responses.</p></div>
           </div>
-        </article>
-
-        <article class="feature-row">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12z"/></svg></div>
-          <div class="feature-copy">
-            <h3>Smart Hydration System</h3>
-            <p>ATHENA estimates dehydration risk from your physiological data and warns you before symptoms ever appear.</p>
-          </div>
-        </article>
-
-        <article class="feature-row">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-          <div class="feature-copy">
-            <h3>Nutrition Intelligence</h3>
-            <p>Snap a photo of your meal. AI recognizes the food, estimates calories, calculates protein, fat, and carbs, and scores overall nutritional quality.</p>
-          </div>
-        </article>
-
-        <article class="feature-row">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-          <div class="feature-copy">
-            <h3>Early Health Detection</h3>
-            <p>ATHENA tracks deviations from your personal baseline, catching early signs of illness, overtraining, chronic stress, poor recovery, or reduced immune activity.</p>
-          </div>
-        </article>
-
-        <article class="feature-row">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="3" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="21"/></svg></div>
-          <div class="feature-copy">
-            <h3>Digital Twin Technology</h3>
-            <p>AI builds a living digital model of your body to forecast fitness, recovery speed, injury risk, and how today's training, sleep, and nutrition ripple forward.</p>
-          </div>
-        </article>
-
-        <article class="feature-row">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-          <div class="feature-copy">
-            <h3>Personal AI Coach</h3>
-            <p>A new plan every day for training, recovery, hydration, nutrition, and rest — adapting in real time as your body changes.</p>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPARE -->
-  <section class="section compare" id="compare">
-    <div class="container">
-      <p class="section-eyebrow">The Difference</p>
-      <h2 class="section-title">Present vs. future.</h2>
-      <div class="compare-grid">
-        <div class="compare-card">
-          <p class="compare-label">Whoop</p>
-          <p class="compare-statement">Shows you your body's current state.</p>
-        </div>
-        <div class="compare-vs" aria-hidden="true">→</div>
-        <div class="compare-card compare-card-highlight">
-          <p class="compare-label">ATHENA AI</p>
-          <p class="compare-statement">Analyzes your data and forecasts future risk — helping prevent injuries, illness, and overload before they happen.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WAITLIST -->
-  <section class="section waitlist" id="waitlist">
-    <div class="container waitlist-inner">
-      <h2 class="section-title">Be first to predict your future.</h2>
-      <p class="section-lead">The device and app are in development. Join the waitlist for early access.</p>
+  <!-- AI COACH -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="split-grid reveal">
+        <div>
+          <h2 class="section-title">One adaptive plan<br><span class="text-gradient">for your body.</span></h2>
+          <p class="section-lead">Your plan updates as your body changes. ATHENA creates a personalized daily schedule based on your recovery, goals, and real-time data.</p>
+          <div class="bullet-stack">
+            <div class="bullet-item"><span class="check-dot teal">✓</span><div><h4>Adapts in Real-Time</h4><p>Your plan adjusts based on sleep quality, stress, and recovery metrics.</p></div></div>
+            <div class="bullet-item"><span class="check-dot purple">✓</span><div><h4>Personalized to You</h4><p>No generic advice. Every recommendation is tailored to your unique baseline.</p></div></div>
+            <div class="bullet-item"><span class="check-dot teal">✓</span><div><h4>Proactive Guidance</h4><p>Get alerts before issues arise, not after they impact your performance.</p></div></div>
+          </div>
+          <div class="wide-card wide-card-teal-tint">
+            <p><b class="accent-teal">Your plan updates as your body changes.</b> Based on this morning's recovery score, we've adjusted today's training intensity.</p>
+          </div>
+        </div>
+
+        <div class="schedule-card">
+          <div class="schedule-head"><svg class="icon icon-sm accent-teal" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg><span class="mini-label">Today's Schedule</span></div>
+          <h3>Friday, June 12</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-node teal">✓</span>
+              <div class="timeline-card"><div><h4>Recovery Check</h4><p class="mono">08:00</p></div><span class="tag tag-green">Done</span></div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-node teal">11</span>
+              <div class="timeline-card"><div><h4>Hydration Reminder</h4><p class="mono">11:30</p></div></div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-node purple">16</span>
+              <div class="timeline-card"><div><h4>Low-Impact Training</h4><p class="mono">16:00</p></div></div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-node teal">20</span>
+              <div class="timeline-card"><div><h4>Stretching</h4><p class="mono">20:30</p></div></div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-node purple">23</span>
+              <div class="timeline-card"><div><h4>Sleep Target</h4><p class="mono">23:00</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title center reveal">How It Works</h2>
+      <p class="section-lead center reveal">From continuous monitoring to predictive insights in three simple steps.</p>
+
+      <div class="steps-grid reveal">
+        <div class="step-num-card teal">
+          <span class="step-big-num">01</span>
+          <span class="panel-icon icon-teal"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="3"/><line x1="12" y1="9" x2="12" y2="9.01"/></svg></span>
+          <h3>Wear ATHENA BAND 24/7</h3>
+          <p>Continuous monitoring of heart rate, HRV, sleep, temperature, and activity—all from a screenless band.</p>
+        </div>
+        <div class="step-num-card purple">
+          <span class="step-big-num">02</span>
+          <span class="panel-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 0-4 4c0 1 .3 1.7.8 2.3C7.7 10.2 7 11.5 7 13a5 5 0 0 0 5 5 5 5 0 0 0 5-5c0-1.5-.7-2.8-1.8-3.7.5-.6.8-1.3.8-2.3a4 4 0 0 0-4-4z"/></svg></span>
+          <h3>ATHENA AI learns your baseline</h3>
+          <p>Our AI builds a personalized model of your body, understanding your unique patterns and responses.</p>
+        </div>
+        <div class="step-num-card amber">
+          <span class="step-big-num">03</span>
+          <span class="panel-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>
+          <h3>Get predictions and personalized actions</h3>
+          <p>Receive proactive insights, risk alerts, and adaptive recommendations before issues arise.</p>
+        </div>
+      </div>
+
+      <div class="center reveal" style="margin-top:32px;">
+        <span class="stat-pill inline"><span class="fc-dot"></span>Continuous learning means ATHENA gets smarter every day</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANION APP -->
+  <section class="section section-alt">
+    <div class="container">
+      <p class="eyebrow center reveal"><svg class="icon icon-inline" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>Companion App</p>
+      <h2 class="section-title center reveal">All your insights,<br><span class="text-gradient">one powerful app.</span></h2>
+
+      <div class="phone-grid reveal">
+        <div class="phone-card teal">
+          <div class="phone-status"><span class="mono">9:41</span><span class="phone-bars"></span></div>
+          <span class="panel-icon icon-teal"><svg viewBox="0 0 24 24"><polyline points="2,14 8,14 11,4 15,20 18,10 22,10"/></svg></span>
+          <h4>Today Dashboard</h4>
+          <p>Your complete health status at a glance</p>
+          <div class="phone-block"></div>
+          <div class="phone-block phone-block-sm"></div>
+        </div>
+        <div class="phone-card purple">
+          <div class="phone-status"><span class="mono">9:41</span><span class="phone-bars"></span></div>
+          <span class="panel-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 0-4 4c0 1 .3 1.7.8 2.3C7.7 10.2 7 11.5 7 13a5 5 0 0 0 5 5 5 5 0 0 0 5-5c0-1.5-.7-2.8-1.8-3.7.5-.6.8-1.3.8-2.3a4 4 0 0 0-4-4z"/></svg></span>
+          <h4>Digital Twin</h4>
+          <p>Simulate future scenarios and responses</p>
+          <div class="phone-block"></div>
+          <div class="phone-block phone-block-sm"></div>
+        </div>
+        <div class="phone-card teal">
+          <div class="phone-status"><span class="mono">9:41</span><span class="phone-bars"></span></div>
+          <span class="panel-icon icon-teal"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span>
+          <h4>Recovery Report</h4>
+          <p>Deep analysis of sleep and recovery metrics</p>
+          <div class="phone-block"></div>
+          <div class="phone-block phone-block-sm"></div>
+        </div>
+        <div class="phone-card amber">
+          <div class="phone-status"><span class="mono">9:41</span><span class="phone-bars"></span></div>
+          <span class="panel-icon icon-amber"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7 10 4h4l2 3"/><circle cx="12" cy="13.5" r="3.5"/></svg></span>
+          <h4>Nutrition Scan</h4>
+          <p>AI-powered meal tracking and insights</p>
+          <div class="phone-block"></div>
+          <div class="phone-block phone-block-sm"></div>
+        </div>
+      </div>
+      <p class="center caption reveal">Available for iOS and Android</p>
+    </div>
+  </section>
+
+  </section><!-- /features wrap -->
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 class="section-title center reveal">Be first to experience<br><span class="text-gradient">predictive performance.</span></h2>
+      <p class="section-lead center reveal">Join our early access program and help shape the future of health optimization.</p>
+
+      <div class="pricing-grid reveal">
+        <div class="price-card teal">
+          <span class="panel-icon icon-teal"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
+          <h3>Athlete</h3>
+          <p class="price-desc">For individuals seeking performance optimization</p>
+          <ul class="price-list">
+            <li>ATHENA BAND hardware</li>
+            <li>Full AI predictions</li>
+            <li>Injury risk forecasting</li>
+            <li>Recovery intelligence</li>
+            <li>Nutrition tracking</li>
+            <li>Digital twin simulation</li>
+            <li>24/7 monitoring</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-ghost full">Request Early Access <svg class="icon icon-inline" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+        </div>
+
+        <div class="price-card purple featured">
+          <span class="popular-badge">Most Popular</span>
+          <span class="panel-icon icon-purple"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.8"/><path d="M2.5 21c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5M15 14.7c2.8.3 5 2.7 5 5.6"/></svg></span>
+          <h3>Coach</h3>
+          <p class="price-desc">For trainers managing multiple athletes</p>
+          <ul class="price-list">
+            <li>Everything in Athlete</li>
+            <li>Team dashboard</li>
+            <li>Multi-athlete monitoring</li>
+            <li>Comparative analytics</li>
+            <li>Load management tools</li>
+            <li>Injury risk overview</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-primary full">Request Early Access <svg class="icon icon-inline" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+        </div>
+
+        <div class="price-card amber">
+          <span class="panel-icon icon-amber"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><line x1="8" y1="7" x2="8" y2="7.01"/><line x1="12" y1="7" x2="12" y2="7.01"/><line x1="16" y1="7" x2="16" y2="7.01"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="10" y1="21" x2="10" y2="17"/><line x1="14" y1="21" x2="14" y2="17"/></svg></span>
+          <h3>Clinic / Performance Lab</h3>
+          <p class="price-desc">For research and clinical applications</p>
+          <ul class="price-list">
+            <li>Everything in Coach</li>
+            <li>API access</li>
+            <li>Custom integrations</li>
+            <li>Research data exports</li>
+            <li>White-label options</li>
+            <li>Dedicated support</li>
+            <li>Custom pricing</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-ghost-amber full">Contact Sales <svg class="icon icon-inline" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+        </div>
+      </div>
+      <p class="center caption reveal">Limited spots available for early access program.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-alt" id="about">
+    <div class="container narrow">
+      <h2 class="section-title center reveal">Frequently Asked Questions</h2>
+
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q">Is ATHENA a medical device? <svg class="chevron icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></button>
+          <div class="faq-a"><p>No. ATHENA is a wellness and performance tool designed to help you understand trends in your body. It is not a diagnostic or medical device, and it doesn't replace professional medical advice.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How accurate are the predictions? <svg class="chevron icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></button>
+          <div class="faq-a"><p>ATHENA's models improve as they learn your personal baseline. Predictions are probabilistic risk indicators, not certainties, and accuracy improves the longer you wear the band.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What data does ATHENA collect? <svg class="chevron icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></button>
+          <div class="faq-a"><p>Heart rate, HRV, skin temperature, sleep stages, movement, and activity load — all collected continuously from the band and combined with any meals you log in the app.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is my health data private? <svg class="chevron icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></button>
+          <div class="faq-a"><p>Yes. Your data is encrypted in transit and at rest, and it is never sold to third parties. You can export or delete your data at any time.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Does the band have a screen? <svg class="chevron icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></button>
+          <div class="faq-a"><p>No — ATHENA BAND is intentionally screenless. All insights live in the ATHENA app so the band itself stays minimal, comfortable, and distraction-free.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How long does the battery last? <svg class="chevron icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></button>
+          <div class="faq-a"><p>Up to 7 days of continuous monitoring on a single charge, with quick top-up charging that doesn't require removing the band.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What makes ATHENA different from other fitness trackers? <svg class="chevron icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></button>
+          <div class="faq-a"><p>Most trackers report your current or past state. ATHENA's digital twin models forecast what's likely to happen next — injury risk, recovery speed, illness — so you can act before problems appear.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">When will ATHENA be available? <svg class="chevron icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></button>
+          <div class="faq-a"><p>ATHENA BAND and the companion app are currently in development. Join the waitlist for early access updates and launch timing.</p></div>
+        </div>
+      </div>
+
+      <div class="disclaimer-card reveal">
+        <span class="panel-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+        <div>
+          <h4>Important Disclaimer</h4>
+          <p>ATHENA is a wellness and performance tool, not a medical diagnostic device. The insights and predictions provided are for informational purposes only and should not replace professional medical advice, diagnosis, or treatment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section final-cta" id="waitlist">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container center reveal">
+      <h2 class="section-title center">Don't just measure today.<br><span class="text-gradient">Prepare for tomorrow.</span></h2>
+      <p class="section-lead center">Join thousands of athletes, coaches, and performance labs using predictive AI to optimize health and performance.</p>
+
       <form class="waitlist-form" id="waitlistForm" novalidate>
         <input type="email" id="waitlistEmail" name="email" placeholder="you@email.com" required aria-label="Email address" />
-        <button type="submit" class="btn btn-primary">Join the Waitlist</button>
+        <button type="submit" class="btn btn-primary">Join Waitlist <svg class="icon icon-inline" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></button>
       </form>
       <p class="waitlist-msg" id="waitlistMsg" role="status" aria-live="polite"></p>
+
+      <div class="final-stats">
+        <div><span class="final-stat-num mono">24/7</span><span>Continuous Monitoring</span></div>
+        <div><span class="final-stat-num mono">7-Day</span><span>Risk Forecasting</span></div>
+        <div><span class="final-stat-num mono">AI</span><span>Powered Predictions</span></div>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <a class="brand" href="#top">
-        <span class="brand-mark" aria-hidden="true"></span>
-        ATHENA<span class="brand-thin">BAND</span>
-      </a>
-      <p class="footer-tagline">"Don't Track Your Body. Predict Its Future."</p>
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <a class="brand" href="#top">ATHENA</a>
+      <p class="footer-tagline">Don't track your body. Predict its future.</p>
+      <p class="mini-label" style="margin-top:24px;">Stay Updated</p>
+      <form class="footer-form" id="footerForm">
+        <input type="email" placeholder="Enter your email" aria-label="Email address" required />
+        <button type="submit" aria-label="Subscribe"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4l16 8-16 8V4z"/></svg></button>
+      </form>
     </div>
-    <nav class="footer-nav" aria-label="Footer">
-      <a href="#device">Device</a>
-      <a href="#features">AI Features</a>
-      <a href="#compare">Why ATHENA</a>
-      <a href="#waitlist">Join Waitlist</a>
-    </nav>
+
+    <div class="footer-col">
+      <h5>Product</h5>
+      <a href="#technology">Technology</a>
+      <a href="#features">Features</a>
+      <a href="#band">Band</a>
+      <a href="#waitlist">App</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="#about">About</a>
+      <a href="#">Blog</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+    </div>
+    <div class="footer-col">
+      <h5>Resources</h5>
+      <a href="#">Help Center</a>
+      <a href="#">API Documentation</a>
+      <a href="#">Research</a>
+      <a href="#">Partners</a>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Compliance</a>
+    </div>
   </div>
-  <div class="container">
-    <p class="footer-fine">© 2026 ATHENA BAND. Device and app coming soon.</p>
+
+  <div class="container footer-bottom">
+    <p>© 2026 ATHENA. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="#" aria-label="Twitter"><svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 5.9c-.7.3-1.5.5-2.3.6.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.4c-.6 0-1.3-.2-1.8-.5v.1c0 2 1.4 3.6 3.3 4a4.2 4.2 0 0 1-1.8.1c.5 1.6 2 2.8 3.8 2.8A8.2 8.2 0 0 1 2 18.6a11.6 11.6 0 0 0 6.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.3z"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+      <a href="#" aria-label="LinkedIn"><svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="7" y1="10" x2="7" y2="17"/><line x1="7" y1="7" x2="7" y2="7.01"/><line x1="12" y1="17" x2="12" y2="10"/><path d="M12 13c0-1.7 1.3-3 3-3s3 1.3 3 3v4"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="4"/><polygon points="10,9 16,12 10,15"/></svg></a>
+    </div>
+    <select class="lang-select" aria-label="Language"><option>English</option></select>
   </div>
 </footer>
 

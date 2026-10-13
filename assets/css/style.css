@@ -522,10 +522,12 @@ input { font-family: inherit; }
 }
 .team-card h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; line-height: 1.3; margin-bottom: 12px; }
 .team-pulse {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em;
+  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px;
+  font-size: .74rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; line-height: 1.4;
 }
+.team-bio { color: var(--muted); font-size: .84rem; line-height: 1.55; }
 .team-pulse .fc-dot { background: var(--accent); box-shadow: 0 0 6px rgba(var(--accent-rgb), .8); width: 6px; height: 6px; }
+.team-card { justify-content: flex-start; }
 
 /* ---------- Final CTA ---------- */
 .final-cta { position: relative; overflow: hidden; padding-top: 140px; }

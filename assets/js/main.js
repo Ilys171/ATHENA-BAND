@@ -94,3 +94,135 @@ function wireWaitlistForm(formId, msgId, resetForm = true) {
 
 wireWaitlistForm('waitlistForm', 'waitlistMsg');
 wireWaitlistForm('footerForm', null);
+
+// ---------- Gallery ----------
+const galleryGrid = document.getElementById('galleryGrid');
+if (galleryGrid) {
+  const items = Array.from(galleryGrid.querySelectorAll('.g-item'));
+  const filters = document.querySelectorAll('.g-filter');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Keep every video silent, whatever the browser or the user tries.
+  const forceMute = (v) => {
+    v.muted = true;
+    v.defaultMuted = true;
+    v.volume = 0;
+    v.addEventListener('volumechange', () => { if (!v.muted || v.volume) { v.muted = true; v.volume = 0; } });
+  };
+  galleryGrid.querySelectorAll('video').forEach(forceMute);
+
+  // Counts on filter chips
+  document.querySelectorAll('[data-count]').forEach((el) => {
+    const cat = el.dataset.count;
+    el.textContent = cat === 'all' ? items.length : items.filter((i) => i.dataset.cat === cat).length;
+  });
+
+  const visibleItems = () => items.filter((i) => !i.classList.contains('is-hidden'));
+
+  const applyFilter = (filter) => {
+    items.forEach((item) => item.classList.toggle('is-hidden', filter !== 'all' && item.dataset.cat !== filter));
+  };
+
+  filters.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filters.forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+      applyFilter(btn.dataset.filter);
+    });
+  });
+
+  // Play muted clips only while they're on screen
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const v = entry.target;
+        if (entry.isIntersecting) { v.muted = true; v.play().catch(() => {}); }
+        else v.pause();
+      });
+    }, { threshold: 0.35 });
+    galleryGrid.querySelectorAll('video').forEach((v) => videoObserver.observe(v));
+  }
+
+  // Lightbox
+  const lb = document.getElementById('lightbox');
+  document.body.appendChild(lb); // escape the section's stacking context so it sits above the header
+  const lbMedia = lb.querySelector('.lb-media');
+  const lbText = lb.querySelector('.lb-text');
+  const lbCounter = lb.querySelector('.lb-counter');
+  let lbList = [];
+  let lbIndex = 0;
+  let lastFocus = null;
+
+  const renderLightbox = () => {
+    const item = lbList[lbIndex];
+    const src = item.querySelector('img, video');
+    lbMedia.innerHTML = '';
+    let el;
+    if (src.tagName === 'VIDEO') {
+      el = document.createElement('video');
+      el.src = src.getAttribute('src').split('#')[0];
+      el.loop = true;
+      el.playsInline = true;
+      el.autoplay = true;
+      forceMute(el);
+      el.setAttribute('aria-label', src.getAttribute('aria-label'));
+      // No controls (they include a volume button); click to pause/resume.
+      el.addEventListener('click', () => (el.paused ? el.play() : el.pause()));
+    } else {
+      el = document.createElement('img');
+      el.src = src.getAttribute('src');
+      el.alt = src.alt;
+    }
+    lbMedia.appendChild(el);
+    if (el.tagName === 'VIDEO') el.play().catch(() => {});
+    lbText.textContent = item.querySelector('figcaption').lastChild.textContent.trim();
+    lbCounter.textContent = `${String(lbIndex + 1).padStart(2, '0')} / ${String(lbList.length).padStart(2, '0')}`;
+  };
+
+  const openLightbox = (item) => {
+    lbList = visibleItems();
+    lbIndex = Math.max(0, lbList.indexOf(item));
+    lastFocus = document.activeElement;
+    lb.hidden = false;
+    document.body.classList.add('lb-open');
+    renderLightbox();
+    lb.querySelector('.lb-close').focus();
+  };
+
+  const closeLightbox = () => {
+    lb.hidden = true;
+    lbMedia.innerHTML = '';
+    document.body.classList.remove('lb-open');
+    if (lastFocus) lastFocus.focus();
+  };
+
+  const step = (dir) => {
+    lbIndex = (lbIndex + dir + lbList.length) % lbList.length;
+    renderLightbox();
+  };
+
+  items.forEach((item) => {
+    item.addEventListener('click', () => openLightbox(item));
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(item); }
+    });
+  });
+  lb.querySelector('.lb-close').addEventListener('click', closeLightbox);
+  lb.querySelector('.lb-prev').addEventListener('click', () => step(-1));
+  lb.querySelector('.lb-next').addEventListener('click', () => step(1));
+  lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') closeLightbox();
+    else if (e.key === 'ArrowRight') step(1);
+    else if (e.key === 'ArrowLeft') step(-1);
+    else if (e.key === 'Tab') {
+      // Keep focus inside the viewer
+      const focusables = Array.from(lb.querySelectorAll('button'));
+      const i = focusables.indexOf(document.activeElement);
+      e.preventDefault();
+      focusables[(i + (e.shiftKey ? -1 : 1) + focusables.length) % focusables.length].focus();
+    }
+  });
+}
